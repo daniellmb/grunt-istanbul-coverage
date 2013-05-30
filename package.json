@@ -1,0 +1,45 @@
+{
+  "name": "grunt-istanbul-coverage",
+  "description": "A simple grunt plugin for checking coverage thresholds from istanbul coverage objects.",
+  "version": "0.0.1",
+  "homepage": "https://github.com/daniellmb/grunt-istanbul-coverage",
+  "author": {
+    "name": "Daniel Lamb",
+    "url": "http://daniellmb.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daniellmb/grunt-istanbul-coverage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/daniellmb/grunt-istanbul-coverage/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/daniellmb/grunt-istanbul-coverage/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt": "~0.4.1",
+    "istanbul": "~0.1.32"
+  },
+  "dependencies": {
+    "istanbul": "~0.1.32"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "gruntplugin", "coverage", "check coverage", "code coverage", "JS code coverage", "JS coverage", "istanbul"
+  ]
+}

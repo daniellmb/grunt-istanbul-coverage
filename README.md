@@ -24,8 +24,8 @@ grunt.initConfig({
         'lines': 90,
         'functions': 90
       },
-      dir: 'coverage'
-      root: 'test',
+      dir: 'coverage',
+      root: 'test'
     }
   }
 })

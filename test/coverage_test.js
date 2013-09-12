@@ -9,10 +9,50 @@ exports.istanbul_coverage = {
         //reset options
         options = {
             thresholds: {},
-            'root': './test/',
-            'dir': 'fixtures'
+            root: './test/',
+            dir: 'fixtures'
         };
         done();
+    },
+    'should throw error when root option is not set': function (test) {
+        test.expect(1);
+
+        //remove root option
+        options.root = undefined;
+        test.throws(function () {
+            helper.checkCoverage(options);
+        });
+        test.done();
+    },
+    'should throw error when dir option is not set': function (test) {
+        test.expect(1);
+
+        //remove dir option
+        options.dir = undefined;
+        test.throws(function () {
+            helper.checkCoverage(options);
+        });
+        test.done();
+    },
+    'should throw error when coverage folder is not found': function (test) {
+        test.expect(1);
+
+        //set invalid path
+        options.dir = 'foo';
+        test.throws(function () {
+            helper.checkCoverage(options);
+        });
+        test.done();
+    },
+    'should throw error when there are no coverage json files': function (test) {
+        test.expect(1);
+
+        //set to folder with no json files
+        options.dir = '';
+        test.throws(function () {
+            helper.checkCoverage(options);
+        });
+        test.done();
     },
     'should fail on inadequate statement coverage': function (test) {
         test.expect(1);

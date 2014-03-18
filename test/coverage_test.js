@@ -48,7 +48,7 @@ exports.istanbul_coverage = {
         test.expect(1);
 
         //set to folder with no json files
-        options.dir = '';
+        options.dir = '../tasks';
         test.throws(function () {
             helper.checkCoverage(options);
         });

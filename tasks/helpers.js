@@ -42,9 +42,7 @@ exports.init = function (grunt, silent) {
             throw new Error('folder "' + folder + '" does not exist.');
         }
         //check for coverage json files
-        var list = fs.readdirSync(folder).filter(function (file) {
-            return path.extname(file) === '.json';
-        });
+        var list = grunt.file.expand({ matchBase: true, cwd: folder }, '**/coverage*.json');
         if (list.length === 0) {
             throw new Error('no coverage files found in "' + folder + '".');
         }

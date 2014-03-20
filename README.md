@@ -1,6 +1,6 @@
 # grunt-istanbul-coverage [![Build Status](https://travis-ci.org/daniellmb/grunt-istanbul-coverage.png)](https://travis-ci.org/daniellmb/grunt-istanbul-coverage)
 
-> A simple grunt plugin for checking aggregated coverage thresholds from istanbul coverage JSON files.
+Grunt plugin to **enforce coverage thresholds** from istanbul coverage JSON files
 
 I wanted more than just insight into code coverage but a way to enforce threshold limits as well.
 

@@ -5,7 +5,6 @@
     "maxcomplexity": 8,
     "node": true,
     "browser": true,
-    "es5": true,
     "esnext": true,
     "bitwise": true,
     "curly": true,

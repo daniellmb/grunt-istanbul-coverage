@@ -152,5 +152,49 @@ exports.istanbul_coverage = {
             test.ok(passed);
             test.done();
         });
+    },
+    'should console.log out the coverage summary if report is true': function (test) {
+        var helper = require('../tasks/helpers').init(grunt, false);
+        var consoleLogs = [];
+        var cl = console.log;
+        console.log = function (msg) {
+            consoleLogs.push(msg);
+        };
+
+        test.expect(1);
+
+        //set passing threshold
+        options.thresholds.lines = 60;
+        options.report = true;
+
+        helper.checkCoverage(options, function () {
+            consoleLogs.forEach(function(msg) {
+                if (msg.indexOf('Coverage summary') > 0) {
+                    console.log = cl;
+                    test.ok(msg.indexOf('Coverage summary') > 0);
+                    test.done();
+                }
+            });
+        });
+    },
+    'should not console.log out the coverage summary if report is true': function (test) {
+        var helper = require('../tasks/helpers').init(grunt, false);
+        var cl = console.log;
+        var consoleLogs = [];
+        console.log = function (msg) {
+            consoleLogs.push(msg);
+        };
+
+        test.expect(1);
+
+        //set passing threshold
+        options.thresholds.lines = 60;
+        options.report = false;
+
+        helper.checkCoverage(options, function () {
+            test.equal(consoleLogs.length, 0);
+            console.log = cl;
+            test.done();
+        });
     }
 };

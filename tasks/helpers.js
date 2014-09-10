@@ -59,8 +59,8 @@ exports.init = function (grunt, silent) {
                 if (!silent) { grunt.fail.warn(err); }
             } else {
                 passed = true;
-                if (!silent) { grunt.log.ok('Coverage is at or over the minimum thresholds'); }
             }
+
             callback(passed);
         });
     }
@@ -74,7 +74,18 @@ exports.init = function (grunt, silent) {
             var cmdArgs = convertCmdArgs(options);
 
             //run istanbul check coverage command
-            runCommand('check-coverage', cmdArgs, done);
+            runCommand('check-coverage', cmdArgs, function (passed) {
+                cmdArgs.push('text-summary');
+
+                if (options.report && !silent) {
+                    runCommand('report', cmdArgs, done);
+                } else if (!options.report && !silent) {
+                    grunt.log.ok('Coverage is at or over the minimum thresholds');
+                    done(passed);
+                } else {
+                    done(passed);
+                }
+            });
         }
     };
 };

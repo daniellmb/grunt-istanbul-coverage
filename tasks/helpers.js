@@ -79,6 +79,9 @@ exports.init = function (grunt, silent) {
 
                 if (options.report && !silent) {
                     runCommand('report', cmdArgs, done);
+                } else if (!options.report && !silent) {
+                    grunt.log.ok('Coverage is at or over the minimum thresholds');
+                    done(passed);
                 } else {
                     done(passed);
                 }

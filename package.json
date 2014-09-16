@@ -1,7 +1,7 @@
 {
   "name": "grunt-istanbul-coverage",
   "description": "A grunt plugin to enforce coverage thresholds from istanbul coverage objects.",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "homepage": "https://github.com/daniellmb/grunt-istanbul-coverage",
   "author": {
     "name": "Daniel Lamb",

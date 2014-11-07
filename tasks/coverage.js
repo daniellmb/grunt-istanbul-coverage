@@ -12,7 +12,7 @@ module.exports = function (grunt) {
 
     var helper = require('./helpers').init(grunt);
 
-    grunt.registerTask('coverage', 'check coverage thresholds', function () {
+    grunt.registerMultiTask('coverage', 'check coverage thresholds', function () {
         //set default options
         var options = this.options({
             thresholds: {

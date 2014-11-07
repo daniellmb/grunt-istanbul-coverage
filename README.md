@@ -17,15 +17,17 @@ more than 10 uncovered statements are allowed,
 ```js
 grunt.initConfig({
   coverage: {
-    options: {
-      thresholds: {
-        'statements': 90,
-        'branches': 90,
-        'lines': 90,
-        'functions': 90
-      },
-      dir: 'coverage',
-      root: 'test'
+    default: {
+      options: {
+        thresholds: {
+          'statements': 90,
+          'branches': 90,
+          'lines': 90,
+          'functions': 90
+        },
+        dir: 'coverage',
+        root: 'test'
+      }
     }
   }
 })

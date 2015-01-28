@@ -42,7 +42,7 @@ recent coverage levels.
 This snippet from a karma.config.js will output the report and JSON files into a coverage folder.
 
 ```js
-coverageReporter = {
+coverageReporter: {
   type: 'json',
   dir: 'test/coverage'
 };

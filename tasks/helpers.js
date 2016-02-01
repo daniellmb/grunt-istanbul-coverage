@@ -56,7 +56,7 @@ exports.init = function (grunt, silent) {
             var passed = false;
             //check result
             if (err) {
-                if (!silent) { grunt.fail.warn(err); }
+                if (!silent) { grunt.fail.warn('\n' + err + '\n\n'); }
             } else {
                 passed = true;
             }

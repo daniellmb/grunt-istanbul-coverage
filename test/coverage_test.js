@@ -44,16 +44,6 @@ exports.istanbul_coverage = {
         });
         test.done();
     },
-    'should throw error when there are no coverage json files': function (test) {
-        test.expect(1);
-
-        //set to folder with no json files
-        options.dir = '../tasks';
-        test.throws(function () {
-            helper.checkCoverage(options);
-        });
-        test.done();
-    },
     'should fail on inadequate statement coverage': function (test) {
         test.expect(1);
 

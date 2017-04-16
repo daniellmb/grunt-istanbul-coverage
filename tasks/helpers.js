@@ -41,11 +41,6 @@ exports.init = function (grunt, silent) {
         if (!exists) {
             throw new Error('folder "' + folder + '" does not exist.');
         }
-        //check for coverage json files
-        var list = grunt.file.expand({ matchBase: true, cwd: folder }, '**/coverage*.json');
-        if (list.length === 0) {
-            throw new Error('no coverage files found in "' + folder + '".');
-        }
     }
 
     function runCommand(command, args, callback) {
